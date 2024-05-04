@@ -1,0 +1,44 @@
+.maze-block {
+  width: 25px;
+  height: 25px;
+  margin: 1px;
+}
+
+/* . open: "maze-open",
+closed: "maze-closed",
+visited: "maze-visited",
+source: "maze-source",
+destination: "maze-destination", */
+.maze-block-open {
+  background-color: rgb(216, 216, 216);
+}
+.maze-block-closed {
+  background-color: rgb(68, 68, 68);
+}
+
+.maze-block-source-destination-open:hover {
+  background-color: pink;
+}
+
+.maze-block-destination {
+  background-color: rgb(94, 214, 94);
+}
+
+.maze-block-source {
+  background-color: #c3da5f;
+}
+
+.maze-block-in-queue {
+  background-color: rgb(255, 255, 0);
+}
+.maze-block-visited {
+  background-color: rgb(255, 174, 0);
+}
+
+.hover-open-to-closed:hover {
+  background-color: #575757b6;
+}
+
+.hover-closed-to-open:hover {
+  background-color: rgba(68, 68, 68, 0.473);
+}

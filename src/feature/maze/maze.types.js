@@ -1,0 +1,16 @@
+export const MAZE_ACTION_TYPES = {
+  shuffle: "maze/shuffle",
+  toggleSourceOpen: "maze/set_is_source_open",
+  toggleDestinationOpen: "maze/set_is_destination_open",
+  changeSize: "maze/change_size",
+  toggleOpenClose: "maze/toggle_open_close",
+  setSource: "maze/set_source",
+  setDestination: "maze/set_destination",
+  putBlockInProcess: "maze/put_block_in_process",
+  setBlockVisited: "maze/set_block_visited",
+  solveStart: "maze/solve_start",
+  setMaze: "maze/set_maze",
+  solvePaused: "maze/solve_paused",
+  solveEnd: "maze/solve_end",
+  setSpeed: "maze/set_speed",
+};
