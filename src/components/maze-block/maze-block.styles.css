@@ -1,7 +1,11 @@
+:root {
+  --opacity: 0.95;
+}
+
 .maze-block {
   width: 25px;
   height: 25px;
-  margin: 1px;
+  /* margin: 1px; */
 }
 
 /* . open: "maze-open",
@@ -10,10 +14,10 @@ visited: "maze-visited",
 source: "maze-source",
 destination: "maze-destination", */
 .maze-block-open {
-  background-color: rgb(216, 216, 216);
+  background-color: rgba(250, 250, 250, var(--opacity));
 }
 .maze-block-closed {
-  background-color: rgb(68, 68, 68);
+  background-color: rgba(68, 68, 68, var(--opacity));
 }
 
 .maze-block-source-destination-open:hover {
@@ -21,24 +25,24 @@ destination: "maze-destination", */
 }
 
 .maze-block-destination {
-  background-color: rgb(94, 214, 94);
+  background-color: #16b900;
 }
 
 .maze-block-source {
-  background-color: #c3da5f;
+  background-color: #bb6400;
 }
 
 .maze-block-in-queue {
-  background-color: rgb(255, 255, 0);
+  background-color: rgba(255, 255, 0, var(--opacity));
 }
 .maze-block-visited {
-  background-color: rgb(255, 174, 0);
+  background-color: rgba(255, 174, 0, var(--opacity));
 }
 
 .hover-open-to-closed:hover {
-  background-color: #575757b6;
+  background-color: rgba(87, 87, 87, var(--opacity));
 }
 
 .hover-closed-to-open:hover {
-  background-color: rgba(68, 68, 68, 0.473);
+  background-color: rgba(68, 68, 68, var(--opacity));
 }

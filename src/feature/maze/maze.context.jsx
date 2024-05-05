@@ -23,7 +23,7 @@ const initialState = {
     rows: rows,
     cols: cols,
   },
-  speed: 200, // in milliseconds
+  speed: 100, // in milliseconds
   isSetSourceOpen: false,
   isSetDestinationOpen: false,
   sourceCoordinates: {

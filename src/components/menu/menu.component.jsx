@@ -10,6 +10,8 @@ export default function Menu() {
     size,
     solved,
     speed,
+    isSetSourceOpen,
+    isSetDestinationOpen,
     sourceCoordinates,
     currentlySolving,
     shuffleMaze,
@@ -57,24 +59,46 @@ export default function Menu() {
     setSpeed(MAX_SPEED - event.target.value * 100);
   }
 
+  const setSourceClassName = isSetSourceOpen ? "set-source-button-active" : "";
+  const setDestinationClassName = isSetDestinationOpen ? "set-destination-button-active" : "";
+
   return (
-    <div className='menu-container'>
-      <button onClick={handleSetSource} disabled={solved || currentlySolving}>
+    <div className='card menu-container'>
+      <button className={`typical-button set-source-button ${setSourceClassName}`} onClick={handleSetSource} disabled={solved || currentlySolving}>
         set source
       </button>
-      <button onClick={handleSetDestination} disabled={solved || currentlySolving}>
+      <button
+        className={`typical-button set-destination-button ${setDestinationClassName}`}
+        onClick={handleSetDestination}
+        disabled={solved || currentlySolving}
+      >
         set destination
       </button>
-      <button onClick={handleShuffle} disabled={currentlySolving}>
+      <button className='typical-button shuffle-button' onClick={handleShuffle} disabled={currentlySolving}>
         shuffle
-      </button>
-      <button onClick={handleSolve} disabled={solved || currentlySolving}>
-        solve
       </button>
       {/* <button onClick={handlePause} disabled={solved || !currentlySolving}>
         pause
       </button> */}
-      <input type='range' title='speed' placeholder='speed' min={1} max={5} disabled={solved || currentlySolving} onChange={handleSpeed} />
+      <div className='speed-selection-container'>
+        <button className={`speed-button ${speed === 800 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(800)}>
+          1x
+        </button>
+        <button className={`speed-button ${speed === 500 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(500)}>
+          2x
+        </button>
+        <button className={`speed-button ${speed === 300 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(300)}>
+          3x
+        </button>
+        <button className={`speed-button ${speed === 100 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(100)}>
+          4x
+        </button>
+      </div>
+      <div className='expanded'></div>
+      {/* <input type='range' title='speed' placeholder='speed' min={1} max={5} disabled={solved || currentlySolving} onChange={handleSpeed} /> */}
+      <button className='typical-button solve-button' onClick={handleSolve} disabled={solved || currentlySolving}>
+        solve
+      </button>
     </div>
   );
 }
