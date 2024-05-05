@@ -40,9 +40,9 @@ destination: "maze-destination", */
 }
 
 .hover-open-to-closed:hover {
-  background-color: rgba(87, 87, 87, var(--opacity));
+  background-color: rgba(68, 68, 68, 0.5);
 }
 
 .hover-closed-to-open:hover {
-  background-color: rgba(68, 68, 68, var(--opacity));
+  background-color: rgba(224, 224, 224, 0.5);
 }
