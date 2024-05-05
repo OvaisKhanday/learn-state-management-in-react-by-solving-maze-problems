@@ -1,8 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { MAZE_BLOCK_TYPES, MazeContext } from "../../feature/maze/maze.context";
 import "./menu.styles.css";
-import mazeReducer from "../../feature/maze/maze.reducer";
-import { MAZE_ACTION_TYPES } from "../../feature/maze/maze.types";
 
 export default function Menu() {
   const {
@@ -18,7 +16,6 @@ export default function Menu() {
     toggleIsSourceOpen,
     toggleIsDestinationOpen,
     solveStart,
-    solvePaused,
     solveEnd,
     setMaze,
     setSpeed,
@@ -49,15 +46,6 @@ export default function Menu() {
     }
     solveEnd();
   };
-
-  function handlePause() {
-    solvePaused();
-  }
-
-  function handleSpeed(event) {
-    const MAX_SPEED = 500;
-    setSpeed(MAX_SPEED - event.target.value * 100);
-  }
 
   const setSourceClassName = isSetSourceOpen ? "set-source-button-active" : "";
   const setDestinationClassName = isSetDestinationOpen ? "set-destination-button-active" : "";
@@ -92,6 +80,9 @@ export default function Menu() {
         </button>
         <button className={`speed-button ${speed === 100 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(100)}>
           4x
+        </button>
+        <button className={`speed-button ${speed === 0 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(0)}>
+          5x
         </button>
       </div>
       <div className='expanded'></div>
