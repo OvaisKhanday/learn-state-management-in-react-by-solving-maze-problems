@@ -142,7 +142,7 @@ function shuffleMaze(rows, cols) {
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < cols; j++) {
         //TODO: levels - easy medium hard
-        if (Math.random() > 0.85) newMaze[i][j] = MAZE_BLOCK_TYPES.closed;
+        if (Math.random() > 0.75) newMaze[i][j] = MAZE_BLOCK_TYPES.closed;
       }
     }
     return newMaze;
