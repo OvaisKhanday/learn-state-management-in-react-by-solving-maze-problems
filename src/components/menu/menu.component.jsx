@@ -70,6 +70,8 @@ export default function Menu() {
         pause
       </button> */}
       <div className='speed-selection-container'>
+        <h4>Speed</h4>
+
         <button className={`speed-button ${speed === 800 ? "speed-button-selected" : ""}`} disabled={currentlySolving} onClick={() => setSpeed(800)}>
           1x
         </button>
