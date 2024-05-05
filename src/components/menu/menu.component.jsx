@@ -52,6 +52,7 @@ export default function Menu() {
 
   return (
     <div className='card menu-container'>
+      <h2>MAZE SOLVER</h2>
       <button className={`typical-button set-source-button ${setSourceClassName}`} onClick={handleSetSource} disabled={solved || currentlySolving}>
         set source
       </button>
